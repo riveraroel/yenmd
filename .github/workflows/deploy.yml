@@ -1,0 +1,27 @@
+name: 🚀 Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main   # change this if your repo’s default branch is "master"
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout latest code from GitHub
+      - name: Get latest code
+        uses: actions/checkout@v3
+
+      # Step 2: Upload to Hostinger via FTP
+      - name: 📂 Sync files to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          server-dir: /public_html/   # Hostinger's default web root
+          local-dir: ./              # deploy everything in repo
+          dangerous-clean-slate: false  # prevent deleting files outside repo
