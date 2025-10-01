@@ -1,0 +1,21 @@
+body{
+	background: #393a3d;
+	padding-top: 20vh;	
+}
+form{
+    background: #fff;
+}
+.form-container{
+    border-radius: 20px;
+    padding: 40px;
+}
+
+img.loginbanner{
+    width: 100px;
+    height: 100px;
+}
+
+.card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}

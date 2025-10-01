@@ -1,0 +1,13 @@
+.tab-content{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.asterisk {
+    color: red !important;
+  }
+
+input[readonly], textarea[readonly] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}

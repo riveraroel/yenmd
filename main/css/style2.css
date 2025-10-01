@@ -1,0 +1,135 @@
+.nav .nav-item button.active {
+    background-color: transparent;
+    color: var(--bs-danger) !important;
+  }
+
+  p{
+    color: black;
+  }
+
+  .nav .nav-item button.active::after {
+    content: "";
+    border-right: 4px solid var(--bs-danger);
+    height: 100%;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    border-radius: 5px 0 0 5px;
+  }
+ 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2a354d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preloader img {
+  width: 700px;
+  max-width: 35vw;
+  height: auto;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+.asterisk {
+  color: red !important;
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#main-content {
+  display: block;
+}
+
+#calendar
+{
+  width: 100%;
+  height: 100%;
+}
+
+
+html, body {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.fc-event-tooltip {
+  z-index: 9999 !important; /* Ensure the tooltip is on top of other elements */
+  position: absolute !important; /* Ensure absolute positioning */
+  top: auto !important; /* Override any top offset */
+  left: auto !important; /* Override any left offset */
+  transform: translate3d(0, 0, 0) !important; /* Ensure proper positioning */
+}
+
+.tooltip-inner {
+  max-width: none !important; /* Ensure the tooltip content width is not limited */
+  word-wrap: break-word;
+}
+
+.tooltip.bs-tooltip-top .arrow::before,
+.tooltip.bs-tooltip-right .arrow::before,
+.tooltip.bs-tooltip-bottom .arrow::before,
+.tooltip.bs-tooltip-left .arrow::before {
+  border-width: 5px !important; /* Ensure tooltip arrow is correctly sized */
+}
+
+
+.tooltip {
+  z-index: 9999 !important;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.fc-event {
+  position: relative; /* Ensure events have a defined position for tooltips */
+}
+
+/* Mobile sidebar toggle */
+#sidebarContainer {
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 767.98px) {
+  #sidebarContainer {
+    display: none;
+  }
+
+  #sidebarContainer.show {
+    display: block;
+  }
+}

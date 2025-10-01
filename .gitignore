@@ -1,0 +1,9 @@
+# Ignore Sensitive File
+connection/conn.php
+main/connection/conn.php
+.env
+
+.DS_Store
+.idea/
+*.log
+
